@@ -31,6 +31,8 @@
 </template>
 
 <script>
+
+import { bus } from '../main.js'	
 export default {
 
 	name: 'Login',
@@ -48,10 +50,10 @@ export default {
 			if(this.email === "admin@gmail.com" && this.password === "password"){
 				localStorage.setItem('auth', this.email)
 				this.$router.push('/profile')
+				bus.$emit('signout', true )
 			}else {
 				this.loginfailmsg = "Email or password is invalid."
 			}
-			
 		}
 	}
 

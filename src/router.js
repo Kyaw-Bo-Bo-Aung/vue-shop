@@ -6,8 +6,14 @@ import Login from '@/views/Login'
 import Product from '@/views/Product'
 import Profile from '@/views/Profile'
 import ProductDetail from '@/views/ProductDetail'
+import Err404 from '@/views/Err404'
 
 Vue.use(VueRouter)
+
+const errroute = {
+	path: '/:catchAll(.*)',
+	component: Err404
+}
 
 const routes = [
 	{path: '/' , component: Home},
@@ -38,6 +44,7 @@ const routes = [
 		path: '/products/:id', 
 		component: ProductDetail,
 	},
+	errroute
 ]
 
 

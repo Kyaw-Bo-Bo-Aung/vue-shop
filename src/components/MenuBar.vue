@@ -16,13 +16,13 @@
       <li class="nav-item" :class="{ active: $route.path == '/about' }">
         <router-link class="nav-link" to="/about">About</router-link>
       </li>
-      <li class="nav-item" :class="{ active: $route.path == '/profile' }">
+      <li v-if="auth" class="nav-item" :class="{ active: $route.path == '/profile' }">
         <router-link class="nav-link" to="/profile">Profile</router-link>
       </li>
-        <li class="nav-item" :class="{ active: $route.path == '/login' }">
+        <li v-if="!auth" class="nav-item" :class="{ active: $route.path == '/login' }">
           <router-link class="nav-link" to="/login">Login</router-link>
         </li>
-        <li class="nav-item">
+        <li v-if="auth" class="nav-item">
           <a @click="logout" class="nav-link" style="cursor: pointer;">Logout</a>
         </li>
     </ul>
@@ -32,13 +32,15 @@
 </template>
 
 <script>
+
+import { bus } from '../main.js'  
 export default {
 
   name: "MenuBar",
 
   data() {
     return {
-      auth: true
+      auth: null
     }
   },
 
@@ -46,8 +48,14 @@ export default {
     logout () {
       localStorage.clear()
       this.$router.push('/login')
+      this.auth = false
     }
   },
+
+  created() {
+    bus.$on('signout', (res) => this.auth = res)
+  }
+
 
   
 
