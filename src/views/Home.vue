@@ -2,10 +2,16 @@
 <div class="jumbotron">
 <div class="container">
   <h1 class="display-4">Home Page</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <p class="lead">This is my 1st Vue Cli demo project. <br> No backend functions </p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  <ul>
+    <li>Frontend data are fetched from <a href="https://fakestoreapi.com/" target="_blank">Fake Store API</a></li>
+    <li>Vue router</li>
+    <li>Navigation guard</li>
+    <li>Bootstrap 4.x</li>
+  </ul>
+  <hr>
+  <p>For login: (email: admin@gmail.com, password: password)</p>
 </div>
 </div>
 </template>

@@ -13,10 +13,10 @@
 					<h3 class="mb-3">Login</h3>
 					<form>
 						<div class="form-group">
-							<input v-model="email" class="form-control" type="email" name="" placeholder="Email">
+							<input v-model="email" class="form-control" type="email" name="" placeholder="Email" value="admin@gmail.com">
 						</div>
 						<div class="form-group">
-							<input v-model="password" class="form-control" type="password" name="" placeholder="Password">
+							<input v-model="password" class="form-control" type="password" name="" placeholder="Password" value="password">
 						</div>
 						<button @click.prevent="login" class="btn btn-primary btn-block">Login</button>
 					</form>
